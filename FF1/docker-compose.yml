@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      PGDATA: /data/postgres
+      POSTGRES_DB: ${DB_NAME}
+    volumes:
+      - ./db_data:/data/postgres
+    ports:
+      - "7777:5432"
+
+    # web_server:
+    #  depends_on:
+    #    - postgres
