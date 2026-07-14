@@ -180,10 +180,6 @@ Contiene il reverse proxy principale e la sua configurazione.
 
 Contiene il server VPN e le configurazioni dei peer.
 
-### [a.txt](a.txt)
-
-File singolo presente nella radice del workspace, non identificato come parte dello stack principale.
-
 ## Dati persistenti e backup
 
 Queste cartelle non sono servizi, ma dati e configurazioni che vanno considerati parte dell'infrastruttura:
@@ -242,6 +238,3 @@ flowchart TB
 - WireGuard è il canale corretto per l'accesso remoto alla rete domestica.
 - Pi-hole e i vari database mantengono uno stato persistente locale che conviene includere nei backup.
 
-## Nota
-
-Questa documentazione è stata costruita leggendo i file presenti nella cartella condivisa e descrive l'architettura risultante, non una configurazione ideale o astratta.
