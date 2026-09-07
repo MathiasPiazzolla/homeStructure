@@ -1,0 +1,11 @@
+services:
+  updateip:
+    build: .
+    container_name: updateip
+    #restart: always
+
+    environment:
+      TZ: Europe/Rome
+      CLOUDFLARE_API_TOKEN: ${CLOUDFLARE_API_TOKEN}
+      CLOUDFLARE_ZONE_ID: ${CLOUDFLARE_ZONE_ID}
+      CLOUDFLARE_RECORD_NAME: ${CLOUDFLARE_RECORD_NAME}
