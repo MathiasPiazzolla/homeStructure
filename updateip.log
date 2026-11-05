@@ -1,0 +1,29 @@
+2026-11-05 22:53:45,062 ERROR Error getting zone id: "Could not resolve authentication method. Expected one of api_email, api_key, api_token or user_service_key to be set. Or for one of the `X-Auth-Email`, `X-Auth-Key`, `Authorization` or `X-Auth-User-Service-Key` headers to be explicitly omitted"
+Traceback (most recent call last):
+  File "c:\Users\mathi\Progetti\homeStructure\updateIp\main.py", line 26, in get_zone_id
+    zones = cf.zones.list()
+  File "C:\Users\mathi\AppData\Local\Programs\Python\Python310\lib\site-packages\cloudflare\resources\zones\zones.py", line 337, in list
+    return self._get_api_list(
+  File "C:\Users\mathi\AppData\Local\Programs\Python\Python310\lib\site-packages\cloudflare\_base_client.py", line 1414, in get_api_list
+    return self._request_api_list(model, page, opts)
+  File "C:\Users\mathi\AppData\Local\Programs\Python\Python310\lib\site-packages\cloudflare\_base_client.py", line 1212, in _request_api_list
+    return self.request(page, options, stream=False)
+  File "C:\Users\mathi\AppData\Local\Programs\Python\Python310\lib\site-packages\cloudflare\_base_client.py", line 1036, in request
+    request = self._build_request(options, retries_taken=retries_taken)
+  File "C:\Users\mathi\AppData\Local\Programs\Python\Python310\lib\site-packages\cloudflare\_base_client.py", line 516, in _build_request
+    headers = self._build_headers(options, retries_taken=retries_taken)
+  File "C:\Users\mathi\AppData\Local\Programs\Python\Python310\lib\site-packages\cloudflare\_base_client.py", line 444, in _build_headers
+    self._validate_headers(headers_dict, custom_headers)
+  File "C:\Users\mathi\AppData\Local\Programs\Python\Python310\lib\site-packages\cloudflare\_client.py", line 1471, in _validate_headers
+    raise TypeError(
+TypeError: "Could not resolve authentication method. Expected one of api_email, api_key, api_token or user_service_key to be set. Or for one of the `X-Auth-Email`, `X-Auth-Key`, `Authorization` or `X-Auth-User-Service-Key` headers to be explicitly omitted"
+2026-11-05 22:53:45,464 INFO Current public IP: 93.66.71.59
+2026-11-05 22:53:45,645 ERROR Error retrieving record info: Expected a non-empty value for `zone_id` but received None
+Traceback (most recent call last):
+  File "c:\Users\mathi\Progetti\homeStructure\updateIp\main.py", line 39, in get_records
+    for r in cf.dns.records.list(zone_id=zone_id, type="A"):
+  File "C:\Users\mathi\AppData\Local\Programs\Python\Python310\lib\site-packages\cloudflare\resources\dns\records.py", line 3377, in list
+    raise ValueError(f"Expected a non-empty value for `zone_id` but received {zone_id!r}")
+ValueError: Expected a non-empty value for `zone_id` but received None
+2026-11-05 22:53:45,646 WARNING No matching A records, skipping update
+2026-11-05 22:55:34,476 ERROR CLOUDFLARE_API_TOKEN non impostata. Impostala prima di avviare lo script.
